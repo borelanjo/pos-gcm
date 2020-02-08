@@ -15,6 +15,10 @@ public class GarapaList implements ValoresItf {
             return false;
         }
 
+        if (valor < 0) {
+            return false;
+        }
+
         valores.add(valor);
         return true;
     }

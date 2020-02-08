@@ -21,6 +21,16 @@ class ValoresTfTest {
         boolean resultado = valoresTf.inserir(valor);
         assertTrue("O valor tinha que está inserido", resultado);
     }
+    
+    @Test
+    @DisplayName("Só deve ser permitido valores positivos")
+    void testNaoPodeInserirUmValorNegativo() {
+        int valor = -5;
+        ValoresItf valoresTf = new Valores();
+
+        boolean resultado = valoresTf.inserir(valor);
+        assertFalse("Não pode incluir negativos", resultado);
+    }
 
     @Test
     @DisplayName("Não deve ser possível inserir mais que 10 valores")

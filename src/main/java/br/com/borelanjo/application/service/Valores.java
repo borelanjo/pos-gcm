@@ -9,10 +9,14 @@ public class Valores implements ValoresItf {
 
     @Override
     public boolean inserir(int valor) {
-        if(currentIndex == maxSize) {
+        if (currentIndex == maxSize) {
             return false;
         }
-        
+
+        if (valor < 0) {
+            return false;
+        }
+
         valores[currentIndex] = valor;
         currentIndex++;
         return true;
